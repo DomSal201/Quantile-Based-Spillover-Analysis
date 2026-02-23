@@ -39,7 +39,7 @@ and plotting routines.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Quantile-Based-Spillover-Analysis.git
+   git clone https://github.com/DomSal201/Quantile-Based-Spillover-Analysis.git
    cd Quantile-Based-Spillover-Analysis
    ```
 
