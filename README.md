@@ -54,9 +54,9 @@ and plotting routines.
 ## 📘 References
 
 - Diebold, F. X. & Yilmaz, K. – *Measuring Financial Asset Return and Volatility Spillovers*
-- Koop, G., Pesaran, M. H. & Potter, S. M. (1996)
-- Pesaran, M. H. & Shin, Y. (1998)
+- Koop, G., Pesaran, M. H. & Potter, S. M. (1996) - *Impulse response analysis in nonlinear multivariate models*
+- Pesaran, M. H. & Shin, Y. (1998) - *Generalized impulse response analysis in linear multivariate models*
 - Gabauer, D. – [ConnectednessApproach (R package)](https://github.com/GabauerDavid/ConnectednessApproach)
-- Ando, Tomohiro and Greenwood-Nimmo, Matthew and Shin, Yongcheol (2018)
+- Ando, Tomohiro and Greenwood-Nimmo, Matthew and Shin, Yongcheol (2018) - *Quantile Connectedness: Modelling Tail Behaviour in the Topology of Financial Networks*
 
 > **Note:** This code is provided for research and educational purposes.
