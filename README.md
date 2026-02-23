@@ -47,7 +47,8 @@ and plotting routines.
    ```bash
    pip install -r requirements.txt
    ```
-   or install individually:   ```bash
+   or install individually:   
+   ```bash
    pip install numpy pandas statsmodels matplotlib
    ```
 
