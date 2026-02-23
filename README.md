@@ -55,7 +55,7 @@ and plotting routines.
 3. **Use the modules in your analysis**
    Import and call the functions from the modules above to estimate spillovers from your data.
 
-## 📘 References
+## References
 
 - Diebold, F. X. & Yilmaz, K. (2012) – *Measuring Financial Asset Return and Volatility Spillovers*
 - Koop, G., Pesaran, M. H. & Potter, S. M. (1996) - *Impulse response analysis in nonlinear multivariate models*
