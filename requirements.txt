@@ -1,0 +1,5 @@
+# Python dependencies required for Quantile-Based Spillover Analysis
+numpy
+pandas
+statsmodels
+matplotlib

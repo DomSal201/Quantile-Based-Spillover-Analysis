@@ -43,8 +43,11 @@ and plotting routines.
    cd Quantile-Based-Spillover-Analysis
    ```
 
-2. **Install dependencies**
+2. **Install dependencies**   There is a `requirements.txt` file listing all required packages. Install them with:
    ```bash
+   pip install -r requirements.txt
+   ```
+   or install individually:   ```bash
    pip install numpy pandas statsmodels matplotlib
    ```
 
