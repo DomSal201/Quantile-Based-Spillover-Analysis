@@ -56,7 +56,7 @@ def calculate_spillover(data, number_of_lags: int, method: str = 'VAR', number_v
     else:
         raise ValueError(f"Unknown method: {method}")
     
-    
+'''   
 def calculate_spillover_rolling_window(data, number_of_lags: int, spillover_from: str, spillover_to: str, method: str = 'VAR', number_vma_coef = 200, forecast_horizon=10, quantile_level: float | None=None, window_size: int = 200):
     # TBD!!!!
     window_results_list = []
@@ -100,7 +100,7 @@ def calculate_spillover_rolling_window(data, number_of_lags: int, spillover_from
     fig.autofmt_xdate()
     ax.legend(loc='best', frameon=True)
     plt.show()
-
+'''
 
 def calculate_tsi_all_quantiles(data, number_of_lags: int, number_vma_coef = 200, forecast_horizon=10):
     results = []

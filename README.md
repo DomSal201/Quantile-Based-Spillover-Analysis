@@ -5,7 +5,7 @@ The approach extends the well-known spillover framework developed by Francis X
 
 The implementation is inspired by the R package [ConnectednessApproach](https://github.com/GabauerDavid/ConnectednessApproach) by David Gabauer.
 
-## 📁 Module Overview
+## Module Overview
 
 ### `gfevd.py`
 Calculates the cumulative **Generalized Impulse Response Function** and the **forecast error covariance matrix**.
@@ -35,7 +35,7 @@ Serves as a high‑level wrapper providing a closed workflow for computing spill
 It supports both VAR and QVAR methods and includes extra utilities such as rolling‑window analysis
 and plotting routines.
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository**
    ```bash
