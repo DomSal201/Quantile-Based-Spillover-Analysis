@@ -59,4 +59,4 @@ and plotting routines.
 - Gabauer, D. – [ConnectednessApproach (R package)](https://github.com/GabauerDavid/ConnectednessApproach)
 - Ando, Tomohiro and Greenwood-Nimmo, Matthew and Shin, Yongcheol (2018) - *Quantile Connectedness: Modelling Tail Behaviour in the Topology of Financial Networks*
 
-> **Note:** This code is provided for research and educational purposes.
+> **Note:** This repository is for academic and research purposes only. It is not intended for use in actual financial trading or investment decisions. The results produced by this software are based on specific econometric assumptions and should be interpreted with caution. The author assumes no responsibility for any financial losses or technical errors arising from the application of this code.
