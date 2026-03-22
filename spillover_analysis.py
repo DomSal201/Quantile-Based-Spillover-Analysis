@@ -9,14 +9,16 @@ from var import VAR_MODEL
 import matplotlib.pyplot as plt
 ###################################################
 
-def calculate_spillover(data, number_of_lags: int, method: str = 'VAR', number_vma_coef = 200, forecast_horizon=10, quantile_level: float | None=None):
+def calculate_spillover(data, number_of_lags: int, method: str = 'VAR', number_vma_coef: int = 200, forecast_horizon: int = 10, quantile_level: float | None=None):
     '''
     Input
     -----
-    method (str): Selection between VAR and QVAR Analysis, \\
     data (pd.DataFrame): Input Data excluding the DateTime column \\
     number_of_lags (int): Number of lags \\
-    number_vma_coef (int): Number of VMA Coefficients
+    method (str): Selection between VAR and QVAR Analysis, \\
+    number_vma_coef (int): Number of VMA Coefficients \\
+    forecast_horizon (int): Forecast horizon used in the GFEVD \\
+    quantile_level (int): Quantile level for the QVAR analysis, None in the case of a VAR analysis \\
     
     Returns
     ----
@@ -56,13 +58,32 @@ def calculate_spillover(data, number_of_lags: int, method: str = 'VAR', number_v
     else:
         raise ValueError(f"Unknown method: {method}")
     
-'''   
-def calculate_spillover_rolling_window(data, number_of_lags: int, spillover_from: str, spillover_to: str, method: str = 'VAR', number_vma_coef = 200, forecast_horizon=10, quantile_level: float | None=None, window_size: int = 200):
-    # TBD!!!!
+
+def calculate_tsi_rolling_window(data, number_of_lags: int, method: str = 'VAR', number_vma_coef = 200, forecast_horizon=10, quantile_level: float | None=None, window_size: int = 200):
+    '''
+    Input
+    -----
+    data (pd.DataFrame): Input Data excluding te DateTime column \\
+    dates (pd.DataFrame): Column with DateTimes
+    number_of_lags (int): Number of lags used in the VAR/QVAR \\
+    method (str): Selection between VAR and QVAR Analysis \\
+    number_vma_coef (int): Number of VMA Coefficients \\
+    forecast_horizon (int): Forecast horizon \\
+    quantile_level (float): Quantile level for the QVAR analysis, None in the case of a VAR analysis \\
+    window_size (int): Rolling window size for the dynamic TSI analysis\\ 
+    
+    Returns
+    ----
+    None
+
+    Function:
+    ----
+    Calculate the dynamic TSI for the given dataset and create a plot
+    '''
+    print(f"Starting Rolling Windows TSI calculation with {window_size} steps...")
     window_results_list = []
     for start in range(len(data) - window_size + 1):
         window = data.iloc[start : start + window_size]
-        print("Durchlauf 1")
         if window.isnull().values.any():
             continue
         try:
@@ -76,33 +97,57 @@ def calculate_spillover_rolling_window(data, number_of_lags: int, spillover_from
             continue
         
     ##### Plot #####
-    plt.style.use('seaborn-v0_8-paper')
     plt.rcParams.update({
-        "font.family": "serif",
-        "font.size": 11,
-        "axes.labelweight": "bold",            
-        "grid.alpha": 0.3
+    "text.usetex": False,    
+    "font.family": "serif",
+    "font.size": 16,
+    "axes.labelsize": 20,
+    "axes.titlesize": 20,
+    "xtick.labelsize": 16,
+    "ytick.labelsize": 16,
+    "legend.fontsize": 16,
+     "pdf.fonttype": 42
     })
         
-    row_idx = data.index.get_loc(spillover_to) 
-    col_idx = data.columns.get_loc(spillover_from)
+    row_idx = int(data.shape[1])
+    col_idx = int(data.shape[1])
     indices = [res['date'] for res in window_results_list]
     values = np.array([res['table'].iloc[row_idx, col_idx] for res in window_results_list])
-    true_dates = pd.to_datetime(data['Date'].iloc[indices])
+    
+    true_dates = np.array(indices)
+    true_dates = true_dates.astype('datetime64')
     fig, ax = plt.subplots(figsize=(10, 5), layout="constrained")
     ax.plot(true_dates, values, color='#1a4a73', linewidth=1.2, label='_nolegend_')
     ax.fill_between(true_dates, 0, values, color='#1a4a73', alpha=0.5, label='_nolegend_')
-    ax.set_xlabel("Date", fontsize=10)
-    ax.set_ylabel("Spillover", fontsize=10)
+    ax.set_xlabel("Date")
+    ax.set_ylabel("TSI")
     ax.grid(True, axis='y', linestyle='--')
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     fig.autofmt_xdate()
-    ax.legend(loc='best', frameon=True)
     plt.show()
-'''
+
 
 def calculate_tsi_all_quantiles(data, number_of_lags: int, number_vma_coef = 200, forecast_horizon=10):
+    '''
+    Input
+    -----
+    data (pd.DataFrame): Input Data excluding te DateTime column \\
+    number_of_lags (int): Number of lags used in the VAR/QVAR \\
+    number_vma_coef (int): Number of VMA Coefficients \\
+    forecast_horizon (int): Forecast horizon \\
+    quantile_level (float): Quantile level for the QVAR analysis, None in the case of a VAR analysis \\
+    window_size (int): Rolling window size for the dynamic TSI analysis\\ 
+    
+    Returns
+    ----
+    None
+
+    Function:
+    ----
+    Calculate the dynamic TSI for the given dataset and create a plot
+    '''
+
     results = []
     quantiles = [q / 100 for q in range(1, 100)]
     for quantile in quantiles:

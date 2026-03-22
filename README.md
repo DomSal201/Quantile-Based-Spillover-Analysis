@@ -34,6 +34,11 @@ Functions compute the total spillover index, directional spillovers (to/from), a
 Serves as a high‑level wrapper providing a closed workflow for computing spillovers.
 It supports both VAR and QVAR methods and includes extra utilities such as rolling‑window analysis
 and plotting routines.
+It returns:
+
+- Spillover table
+- TSI analysis for several quantiles
+- Rolling window TSI analysis
 
 ## Getting Started
 
@@ -61,6 +66,6 @@ and plotting routines.
 - Koop, G., Pesaran, M. H. & Potter, S. M. (1996) - *Impulse response analysis in nonlinear multivariate models*
 - Pesaran, M. H. & Shin, Y. (1998) - *Generalized impulse response analysis in linear multivariate models*
 - Gabauer, D. – [ConnectednessApproach (R package)](https://github.com/GabauerDavid/ConnectednessApproach)
-- Ando, Tomohiro and Greenwood-Nimmo, Matthew and Shin, Yongcheol (2018) - *Quantile Connectedness: Modelling Tail Behaviour in the Topology of Financial Networks*
+- Ando, Tomohiro and Greenwood-Nimmo, Matthew and Shin, Yongcheol (2022) - *Quantile Connectedness: Modelling Tail Behaviour in the Topology of Financial Networks*
 
 > **Note:** This repository is for academic and research purposes only. It is not intended for use in actual financial trading or investment decisions. The results produced by this software are based on specific econometric assumptions and should be interpreted with caution. The author assumes no responsibility for any financial losses or technical errors arising from the application of this code.

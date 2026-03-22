@@ -180,7 +180,8 @@ def calculate_qvar(data: pd.DataFrame, number_lags: int, quantile_level: int):
     qvar_coefficients = calculate_qvar_coefficients(regressor_coefficients, number_lags)
     error_covariance_matrix = calculate_error_covariance(residuals_matrix)
     max_eigenvalue, is_stable = check_qvar_stability(qvar_coefficients)
-    print(f"Max. Eigenvalue: {max_eigenvalue:.4f}")
-    print(f"System is stable: {is_stable}")
+    #print(f"Max. Eigenvalue: {max_eigenvalue:.4f}")
+    if is_stable == False:
+        print(f"System is not stable")
     
     return qvar_coefficients, error_covariance_matrix, prediction_matrix
