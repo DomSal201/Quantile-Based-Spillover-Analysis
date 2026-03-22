@@ -145,7 +145,7 @@ def calculate_tsi_all_quantiles(data, number_of_lags: int, number_vma_coef = 200
 
     Function:
     ----
-    Calculate the dynamic TSI for the given dataset and create a plot
+    Calculate the TSI for different quantiles
     '''
 
     results = []
