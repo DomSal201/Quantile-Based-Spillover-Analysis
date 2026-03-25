@@ -59,7 +59,7 @@ def calculate_spillover(data, number_of_lags: int, method: str = 'VAR', number_v
         raise ValueError(f"Unknown method: {method}")
     
 
-def calculate_tsi_rolling_window(data, number_of_lags: int, method: str = 'VAR', number_vma_coef = 200, forecast_horizon=10, quantile_level: float | None=None, window_size: int = 200):
+def calculate_tsi_rolling_window(data, number_of_lags: int, method: str = 'VAR', number_vma_coef: int = 200, forecast_horizon: int=10, quantile_level: float | None=None, window_size: int = 200):
     '''
     Input
     -----
