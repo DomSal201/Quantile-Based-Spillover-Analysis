@@ -70,9 +70,18 @@ It returns:
 
 2. **Calculate spillover table for VAR or QVAR models**
    ```bash
-   table = calculate_spillover(data, number_of_lags (int), method ('VAR', 'QVAR'), number_vma_coef (int), forecast_horizon (int), quantile_level (float))
+   table = calculate_spillover(data, number_of_lags (int), method ('VAR', 'QVAR'), number_vma_coef (int), forecast_horizon (int), quantile_level (float) | None)
    ```
 
+3. **Calculate dynamic TSI**
+   ```bash
+   calculate_tsi_rolling_window(data, number_of_lags (int), method ('VAR', 'QVAR'), number_vma_coef (int), forecast_horizon (int), quantile_level (float) | None, window_size (int))
+   ```
+
+4. **Calculate the TSI over different quantiles**
+   ```bash
+   calculate_tsi_all_quantiles(data, number_of_lags (int), number_vma_coef (int), forecast_horizon (int))
+   ``
 
 
 
