@@ -66,7 +66,7 @@ It returns:
 1. **Import necessary functions**
    ```bash
    from spillover_analysis import *
-   ````
+   ```
 
 2. **Calculate spillover table for VAR or QVAR models**
    ```bash
