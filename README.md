@@ -60,6 +60,22 @@ It returns:
 3. **Use the modules in your analysis**
    Import and call the functions from the modules above to estimate spillovers from your data.
 
+
+## User Guide
+
+1. **Import necessary functions**
+   ```bash
+   from spillover_analysis import *
+   ````
+
+2. **Calculate spillover table for VAR or QVAR models**
+   ```bash
+   table = calculate_spillover(data, number_of_lags (int), method ('VAR', 'QVAR'), number_vma_coef (int), forecast_horizon (int), quantile_level (float))
+   ```
+
+
+
+
 ## References
 
 - Diebold, F. X. & Yilmaz, K. (2012) – *Measuring Financial Asset Return and Volatility Spillovers*
